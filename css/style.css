@@ -12,6 +12,48 @@ body {
 	flex-direction: column;
 }
 
+.modal{
+	position: absolute;
+	z-index: 999;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	width: 90%;
+	height: 90%;
+	background-color:#e7f0b3;
+	border:solid 3px greenyellow;
+	border-radius:15px;
+	flex-direction: column;
+}
+
+.modal p{
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 3rem;
+	font-weight: 500;
+	padding-bottom: 40px;
+}
+
+.modal button{
+	font-family: Montserrat;
+	font-size: 2rem;
+	font-weight: 700;
+	width: 90px;
+	height: 40px;
+	border-radius:15px;
+	margin: 0 5px;
+	border: solid 3px black;
+	background-color:white;
+	transition: all 0.15s ease-in-out;
+
+}
+
+.modal button:hover{
+	background-color:grey;
+	transition: all 0.15s ease-in-out;
+
+}
+
 table {
 	border-collapse: collapse;
 }
@@ -73,6 +115,7 @@ td:hover {
 }
 
 .message {
+	text-align: center;
 	color: white;
 	font-size: 2.5rem;
 	font-weight: 500;

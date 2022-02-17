@@ -1,10 +1,10 @@
 "use strict";
 
 window.addEventListener('DOMContentLoaded', () => {
-	let origBoard;
-	const huPlayer = 'X',
-		aiPlayer = 'O',
-		winCombos = [
+	let origBoard,
+		huPlayer,
+		aiPlayer;
+	const	winCombos = [
 			[0, 1, 2],
 			[3, 4, 5],
 			[6, 7, 8],
@@ -15,15 +15,37 @@ window.addEventListener('DOMContentLoaded', () => {
 			[6, 4, 2]
 		],
 		cells = document.querySelectorAll('.cell'),
-		restartBtn = document.querySelectorAll('.restart_btn');
+		restartBtn = document.querySelectorAll('.restart_btn'),
+		modal = document.querySelector('.modal'),
+		chooseCross = document.querySelector('.cross'),
+		chooseCircle =document.querySelector('.circle');
 
 	startGame();
+
+	chooseSign();
+
+function chooseSign(){
+	chooseCross.addEventListener('click',()=>{
+		huPlayer = 'X';
+		aiPlayer ='O';
+		modal.style.display='none';
+	});
+	chooseCircle.addEventListener('click',()=>{
+		huPlayer = 'O';
+		aiPlayer ='X';
+		modal.style.display='none';
+	});
+
+
+}
+
 
 	restartBtn.forEach((btn) => {
 		btn.addEventListener('click', startGame);
 	});
 
 	function startGame() {
+		modal.style.display ='flex';
 		document.querySelector('.result').style.display = 'none';
 		origBoard = Array.from(Array(9).keys());
 		for (let i = 0; i < cells.length; i++) {
@@ -74,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		for (let i = 0; i < cells.length; i++) {
 			cells[i].removeEventListener('click', turnClick, false);
 		}
-		declareWinner(gameWon.player == huPlayer ? "Congratulations, you win!" : "You Lose.");
+		declareWinner(gameWon.player == huPlayer ? "Ты победил!" : "Ты проиграл.");
 	}
 
 	function declareWinner(who) {
@@ -96,7 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				cells[i].style.backgroundColor = "yellow";
 				cells[i].removeEventListener('click', turnClick, false);
 			}
-			declareWinner("Draw, try again.");
+			declareWinner("Ничья, попробуй ещё раз.");
 			return true;
 		}
 		return false;
