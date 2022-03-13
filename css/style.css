@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 body {
-	font-family: Montserrat;
-	background: rgb(143, 255, 112);
-	background: linear-gradient(90deg, rgba(143, 255, 112, 1) 0%, rgba(223, 255, 214, 1) 52%, rgba(255, 211, 232, 1) 100%);
+	font-family: Comic;	
+	/* background: rgb(143, 255, 112); */
+	background:white;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -20,22 +20,22 @@ body {
 	justify-content: center;
 	width: 90%;
 	height: 90%;
-	background-color:#e7f0b3;
-	border:solid 3px greenyellow;
+	background-color:ghostwhite;
+	border:solid 3px gray ;
 	border-radius:15px;
 	flex-direction: column;
 }
 
 .modal p{
 	text-align: center;
-	font-family: Montserrat;
+	font-family: Comic;
 	font-size: 3rem;
 	font-weight: 500;
 	padding-bottom: 40px;
 }
 
 .modal button{
-	font-family: Montserrat;
+	font-family: Comic;
 	font-size: 2rem;
 	font-weight: 700;
 	width: 90px;
@@ -59,8 +59,8 @@ table {
 }
 
 td {
-	background-color: #FFD7D5;
-	border: 3px solid #A35CFF;
+	background-color: ghostwhite;
+	border: 3px solid gray;
 	height: 100px;
 	width: 100px;
 	text-align: center;
@@ -73,7 +73,8 @@ td {
 }
 
 td:hover {
-	filter: saturate(250%);
+	background-color:wheat;
+	/* filter: saturate(250%); */
 	transition: all 0.15s ease-in-out;
 
 }
@@ -81,10 +82,10 @@ td:hover {
 
 .restart_btn {
 	margin-top: 50px;
-	color: #8B33FF;
-	background-color: #CEFF85;
+	color: darkslategray;
+	background-color: white;
 	border-radius: 5px;
-	border: 3px solid #FFD3E8;
+	border: 3px solid gray;
 	-webkit-box-shadow: 0px 0px 20px 0px rgba(255, 211, 232, 0.5);
 	-moz-box-shadow: 0px 0px 20px 0px rgba(255, 211, 232, 0.5);
 	box-shadow: 0px 0px 20px 0px rgba(255, 211, 232, 0.5);
@@ -105,7 +106,7 @@ td:hover {
 	position: absolute;
 	top: 50;
 	left: 50;
-	background-color: #e4908cf8;
+	background-color: rgba(255, 0, 0);
 	display: none;
 	align-items: center;
 	justify-content: center;
